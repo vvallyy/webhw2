@@ -1,0 +1,102 @@
+<html>
+<head>
+    <style>
+        body{
+            background-color: white;
+        }
+        input{
+            margin-top: 10px;;
+            background-color: white;
+            color: black;
+            width: 100%;
+            border: 2px solid whitesmoke;
+            border-radius: 14px;
+            height: 100px;
+            font-size: larger;
+            text-align: right;
+        }
+        .calculator{
+            width: 700px;
+            height: 430px;
+            margin-left: 330px;
+            margin-top: 100px;
+            background-color: white;
+            font-size: 22px;
+            font-weight:bolder;
+        }
+        .buttonWidth{
+            width: 100px;
+            display: inline;
+        }
+        button{
+            margin: 6px;
+            width: 20%;
+            height: 50px;
+            border: 3px solid white;
+            border-radius: 10px;
+            color: black;
+            font-weight:bold;font-size: large;
+            background-color: #d9dde0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <center>
+            <input type="text" id='input'>
+            <br>
+            <button class="buttonWidth" onclick="getInput('Deg')">Deg</button>
+            <button class="buttonWidth" onclick="getInput('x!')">x!</button>
+            <button class="buttonWidth" onclick="getInput('(')">(</button>
+            <button  class="buttonWidth"  onclick="getInput(')')">)</button>
+            <button class="buttonWidth" onclick="getInput('%')">%</button>
+            <button class="buttonWidth" onclick="getInput('ac')">AC</button>
+            <br>
+            <button class="buttonWidth" onclick="getInput('sin')">sin</button>
+            <button class="buttonWidth" onclick="getInput('In')">In</button>
+            <button class="buttonWidth" onclick="getInput(7)" style="background-color: #f0f3f4">7</button>
+            <button  class="buttonWidth"  onclick="getInput(8)" style="background-color: #f0f3f4">8</button>
+            <button class="buttonWidth" onclick="getInput(9)" style="background-color: #f0f3f4">9</button>
+            <button class="buttonWidth" onclick="getInput('÷')">÷</button>
+            <br>
+            <button class="buttonWidth" onclick="getInput('cos')">cos</button>
+            <button class="buttonWidth" onclick="getInput('log')">log</button>
+            <button class="buttonWidth" onclick="getInput(4)" style="background-color: #f0f3f4">4</button>
+            <button  class="buttonWidth"  onclick="getInput(5)" style="background-color: #f0f3f4">5</button>
+            <button class="buttonWidth" onclick="getInput(6)" style="background-color: #f0f3f4">6</button>
+            <button class="buttonWidth" onclick="getInput('x')">x</button>
+            <br>
+            <button class="buttonWidth" onclick="getInput('tan')">tan</button>
+            <button class="buttonWidth" onclick="getInput('√')">√ </button>
+            <button class="buttonWidth" onclick="getInput(1)" style="background-color: #f0f3f4">1</button>
+            <button  class="buttonWidth"  onclick="getInput(2)" style="background-color: #f0f3f4">2</button>
+            <button class="buttonWidth" onclick="getInput(3)" style="background-color: #f0f3f4">3</button>
+            <button class="buttonWidth" onclick="getInput('-')">-</button>
+            <br>
+            <button class="buttonWidth" onclick="getInput('EXP')">EXP</button>
+            <button class="buttonWidth" onclick="getInput('y')">x <sup>y</sup> </button>
+            <button class="buttonWidth" onclick="getInput(0)" style="background-color: #f0f3f4">0</button>
+            <button  class="buttonWidth"  onclick="getInput('.')" style="background-color: #f0f3f4">.</button>
+            <button class="buttonWidth" onclick="getInput('=')" style="color: white; background-color: #4285f3 ; border: 2px solid #4285f3;" >=</button>
+            <button class="buttonWidth" onclick="getInput('+')">+</button>
+        </center>
+    </div>
+   
+    <script>
+        function getInput(i){
+            var x =i;
+            var temp = document.getElementById('input').value;
+            if(temp.includes('+') === true && x === '='){
+                document.getElementById('input').value=eval(document.getElementById('input').value);
+            }
+            else if(x === '='){
+                document.getElementById('input').value=eval(document.getElementById('input').value);
+            }else if(x === 'ac'){
+                document.getElementById('input').value='';
+            }else{
+                document.getElementById('input').value+=i;
+            }
+        }
+    </script>
+</body>
+</html>
